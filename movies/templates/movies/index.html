@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>INDEX PAGE</h1>
+  {% for movie in movies %}
+    <a href="{% url 'movies:detail' movie.pk %}">{{ movie.title }}</a>
+    <img src="{{ movie.poster_path }}" alt="영화 포스터">
+    <hr>
+  {% empty %}
+    <p>영화가 없습니다.</p>
+  {% endfor %}
+{% endblock content %}
