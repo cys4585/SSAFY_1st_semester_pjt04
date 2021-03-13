@@ -2,4 +2,13 @@
 
 {% block content %}
   <h1>DETAIL PAGE</h1>
+  <hr>
+  <p>TITLE : {{ movie.title }}</p>
+  <p>OVERVIEW : {{ movie.overview }}</p>
+  <p>POSTER_PATH : {{ movie.poster_path }}</p>
+  <a href="{% url 'movies:edit' movie.pk %}">수정</a>
+  <form action="{% url 'movies:delete' movie.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+  </form>
 {% endblock content %}
