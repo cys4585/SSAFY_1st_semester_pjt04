@@ -69,7 +69,7 @@ python manage.py migrate
 movies.json에 있는 data를 복사해서 DB의 table에 넣기
 
 ```bash
-python manage.py loaddata
+python manage.py loaddata movies.json
 ```
 
 
